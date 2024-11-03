@@ -1,7 +1,7 @@
 # TODO  Напишите функцию count_letters
 def count_letters(str_):
-    str_ = str_.lower()
     dict_chars = {}
+    str_ = str_.lower()
     for char in str_:
         if char.isalpha():
             if char in dict_chars:
@@ -13,9 +13,12 @@ def count_letters(str_):
 
 # TODO Напишите функцию calculate_frequency
 def calculate_frequency(letter_counts):
-    for k, n in letter_counts.items():
-        print(f"{k}: {(n / sum(letter_counts.values())):.2f}")
-    return None
+    res = {}
+    count_letters = sum(letter_counts.values())
+    for key_, value_ in letter_counts.items():
+        res[key_] = value_
+        print(f"{key_}: {(value_ / count_letters):.2f}")
+    return res
 
 
 main_str = """
@@ -58,3 +61,4 @@ main_str = """
 
 init_first_def = count_letters(main_str)
 init_second_def = calculate_frequency(init_first_def)
+# print(init_second_def)
