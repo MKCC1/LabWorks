@@ -34,7 +34,7 @@ class PaperBook(Book):
     @pages.setter
     def pages(self, value: int):
         if not isinstance(value, int):
-            raise TypeError("Кол-во страниц целлочисленное значение")
+            raise TypeError("Кол-во страниц положительное целочисленное значение")
         if value <= 0:
             raise ValueError("В книге больше 0 страниц")
         self._pages = value
@@ -58,7 +58,7 @@ class AudioBook(Book):
     @duration.setter
     def duration(self, value: float):
         if not isinstance(value, (int, float)):
-            raise TypeError("Время положительное число")
+            raise TypeError("Время положительное целочисленное значение")
         if value <= 0:
             raise ValueError("Время больше 0")
         self._duration = float(value)
