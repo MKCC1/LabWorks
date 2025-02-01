@@ -66,12 +66,12 @@ class AudioBook(Book):
     def __str__(self):
         str_ = super().__str__()
         return f"{str_}. Длительность: {self.duration}"
-
-
-book = Book("Старик и море", "Эрнест Хемингуэй")
-paperbook = PaperBook("Солярис", "Станислав Лем", 480)
-audiobook = AudioBook("Цвет из иных миров", "Говард Лавкрафт", 20.5)
+    
 if __name__ == '__main__':
+    book = Book("Старик и море", "Эрнест Хемингуэй")
+    paperbook = PaperBook("Солярис", "Станислав Лем", 480)
+    audiobook = AudioBook("Цвет из иных миров", "Говард Лавкрафт", 20.5)
+    
     print(book)
     print(paperbook)
     print(audiobook)
@@ -79,6 +79,7 @@ if __name__ == '__main__':
     print(repr(book))
     print(repr(paperbook))
     print(repr(audiobook))
+    
     try:
         book.name = "Новое название"
     except AttributeError as e:
